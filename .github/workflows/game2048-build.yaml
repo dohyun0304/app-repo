@@ -38,7 +38,7 @@ jobs:
         id: image-info
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: app
+          ECR_REPOSITORY: app #ecr repo 수정
           IMAGE_TAG: ${{ steps.image.outputs.version }}
         run: |
           echo "::set-output name=ecr_repository::$ECR_REPOSITORY"
@@ -72,7 +72,7 @@ jobs:
         uses: mikefarah/yq@v4.9.6
         with:
           cmd: yq e --inplace '.image.tag = "${{ env.IMAGE_TAG }}"' 2step_service/game2048/values.yaml
-
+#git repo 위치 수정
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
