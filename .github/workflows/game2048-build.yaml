@@ -71,7 +71,7 @@ jobs:
       - name: Image Tag Change
         uses: mikefarah/yq@v4.9.6
         with:
-          cmd: yq e --inplace '.image.tag = "${{ env.IMAGE_TAG }}"' service/game2048/values.yaml
+          cmd: yq e --inplace '.image.tag = "${{ env.IMAGE_TAG }}"' 2step_service/game2048/values.yaml
 
       - name: Create Pull Request
         id: cpr
