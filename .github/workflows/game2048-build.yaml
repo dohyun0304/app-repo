@@ -82,5 +82,4 @@ jobs:
           base: main
           branch: game2048-${{ env.HASH }}
           title: 'deploy: game2048-${{ env.HASH }}'
-          labels: |
-            automerge
+          labels: automerge
